@@ -15,7 +15,7 @@ public class Bullet : MonoBehaviour
     {
         Vector3 pos = transform.position;
 
-        pos.z += 0.05f;
+        pos.z += 0.5f;
 
         transform.position = new Vector3(pos.x, pos.y, pos.z);
 

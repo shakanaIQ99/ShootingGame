@@ -21,7 +21,7 @@ public class Shot : MonoBehaviour
         if(Input.GetKey(KeyCode.Space))
         {
             countup += 0.1f;
-            if (countup >= 5.0f)
+            if (countup >= 1.0f)
             {
                 Instantiate(Bullet, transform.position, Quaternion.identity);
                 countup = 0.0f;

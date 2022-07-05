@@ -152,7 +152,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ef9cdcdcc73e6d41bc0182b427a3a8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panel: {fileID: 205441882}
+  Title: {fileID: 1048174226}
+  Rtry: {fileID: 2024022891}
+  panel: {fileID: 1650687982}
 --- !u!4 &19278865
 Transform:
   m_ObjectHideFlags: 0
@@ -405,6 +407,7 @@ GameObject:
   - component: {fileID: 518989513}
   - component: {fileID: 518989512}
   - component: {fileID: 518989517}
+  - component: {fileID: 518989518}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -456,7 +459,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 81a22243312ee8a44a9b9acc99886257, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -514,6 +517,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a17b0faf2bf24fa44800005a9eb02ca6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particle: {fileID: 8212911442096223575, guid: e0aeaabe1f55e2d4492d70013a2f5f40, type: 3}
+--- !u!114 &518989518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518989511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 825e25a88f45b2f498b3f9dcedada5aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   particle: {fileID: 8212911442096223575, guid: e0aeaabe1f55e2d4492d70013a2f5f40, type: 3}
@@ -901,7 +917,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1048174227
 RectTransform:
   m_ObjectHideFlags: 0
@@ -919,7 +935,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -399}
+  m_AnchoredPosition: {x: -242, y: -399}
   m_SizeDelta: {x: 300, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1048174228
@@ -965,7 +981,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1048174229}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 19278864}
+        m_TargetAssemblyTypeName: Gmanager, Assembly-CSharp
+        m_MethodName: ChangeScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Title
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1048174229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1230,6 +1258,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 128729987059420626, guid: 55e3baea62a00074cbf89f2ad10f8f8b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 069761e71d9e6784485923432605d1c9, type: 2}
+    - target: {fileID: 128729987059420636, guid: 55e3baea62a00074cbf89f2ad10f8f8b, type: 3}
+      propertyPath: particle
+      value: 
+      objectReference: {fileID: 2906621837599228277, guid: 32c5b23dc09f2194da68a9c27e99b7e7, type: 3}
     - target: {fileID: 128729987059420638, guid: 55e3baea62a00074cbf89f2ad10f8f8b, type: 3}
       propertyPath: m_Name
       value: WayEnemy
@@ -1287,6 +1323,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 155582613130893864, guid: 85d2ecbb88535b14b96565f8de9d4560, type: 3}
+      propertyPath: particle
+      value: 
+      objectReference: {fileID: 2906621837599228277, guid: 32c5b23dc09f2194da68a9c27e99b7e7, type: 3}
     - target: {fileID: 155582613130893866, guid: 85d2ecbb88535b14b96565f8de9d4560, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -1410,6 +1450,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 155582613130893864, guid: 85d2ecbb88535b14b96565f8de9d4560, type: 3}
+      propertyPath: particle
+      value: 
+      objectReference: {fileID: 2906621837599228277, guid: 32c5b23dc09f2194da68a9c27e99b7e7, type: 3}
     - target: {fileID: 155582613130893866, guid: 85d2ecbb88535b14b96565f8de9d4560, type: 3}
       propertyPath: m_Name
       value: Enemy (2)
@@ -1434,7 +1478,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2024022892
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1452,7 +1496,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -394}
+  m_AnchoredPosition: {x: 320, y: -394}
   m_SizeDelta: {x: 300, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2024022893
@@ -1498,7 +1542,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2024022894}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 19278864}
+        m_TargetAssemblyTypeName: Gmanager, Assembly-CSharp
+        m_MethodName: SceneReset
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2024022894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1588,6 +1644,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 155582613130893864, guid: 85d2ecbb88535b14b96565f8de9d4560, type: 3}
+      propertyPath: particle
+      value: 
+      objectReference: {fileID: 2906621837599228277, guid: 32c5b23dc09f2194da68a9c27e99b7e7, type: 3}
     - target: {fileID: 155582613130893866, guid: 85d2ecbb88535b14b96565f8de9d4560, type: 3}
       propertyPath: m_Name
       value: Enemy (1)

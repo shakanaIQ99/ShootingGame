@@ -49,38 +49,38 @@ public class PlayerMove : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.RightArrow))
             {
-                pos.x += 0.005f;
+                pos.x += 0.05f;
             }
             if (Input.GetKey(KeyCode.LeftArrow))
             {
-                pos.x -= 0.005f;
+                pos.x -= 0.05f;
             }
             if (Input.GetKey(KeyCode.UpArrow))
             {
-                pos.z += 0.005f;
+                pos.z += 0.05f;
             }
             if (Input.GetKey(KeyCode.DownArrow))
             {
-                pos.z -= 0.005f;
+                pos.z -= 0.05f;
             }
         }
         else
         {
             if (Input.GetKey(KeyCode.RightArrow))
             {
-                pos.x += 0.01f;
+                pos.x += 0.1f;
             }
             if (Input.GetKey(KeyCode.LeftArrow))
             {
-                pos.x -= 0.01f;
+                pos.x -= 0.1f;
             }
             if (Input.GetKey(KeyCode.UpArrow))
             {
-                pos.z += 0.01f;
+                pos.z += 0.1f;
             }
             if (Input.GetKey(KeyCode.DownArrow))
             {
-                pos.z -= 0.01f;
+                pos.z -= 0.1f;
             }
         }
         transform.position = new Vector3(Mathf.Clamp(pos.x,LeftBottom.x+transform.localScale.x-Left,RightTop.x-transform.localScale.x-Right),
