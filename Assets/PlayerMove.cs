@@ -4,10 +4,40 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
+    Vector3 LeftBottom;
+
+    Vector3 RightTop;
+
+    private float Left, Right, Top, Bottom;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        var distance = Vector3.Distance(Camera.main.transform.position, transform.position);
+
+        LeftBottom = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, distance));
+
+        RightTop = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, distance));
+
+        foreach(Transform child in gameObject.transform)
+        {
+            if(child.localPosition.x>=Right)
+            {
+                Right = child.transform.localPosition.x;
+            }
+            if (child.localPosition.x <= Left)
+            {
+               Left = child.transform.localPosition.x;
+            }
+            if (child.localPosition.x >= Top)
+            {
+               Top = child.transform.localPosition.z;
+            }
+            if (child.localPosition.x <= Bottom)
+            {
+                Bottom = child.transform.localPosition.z;
+            }
+        }
     }
 
     // Update is called once per frame
@@ -31,7 +61,9 @@ public class PlayerMove : MonoBehaviour
         {
             pos.z -= 0.01f;
         }
-        transform.position = new Vector3(pos.x, pos.y, pos.z);
+        transform.position = new Vector3(Mathf.Clamp(pos.x,LeftBottom.x+transform.localScale.x-Left,RightTop.x-transform.localScale.x-Right),
+            pos.y,
+            Mathf.Clamp(pos.z, LeftBottom.z + transform.localScale.z-Bottom, RightTop.z - transform.localScale.z-Top));
     }
 
 }
