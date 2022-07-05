@@ -1,28 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class Enemy : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
 
-    private int enemyHp;
+    public void ChangeScene(string nextScene)
+    {
+        SceneManager.LoadScene(nextScene);
+    }
     // Start is called before the first frame update
     void Start()
     {
-        enemyHp = 3;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(enemyHp<=0)
-        {
-            Destroy(this.gameObject);
-        }
-    }
-
-    public void Damage()
-    {
-        enemyHp = enemyHp - 1;
+        
     }
 }

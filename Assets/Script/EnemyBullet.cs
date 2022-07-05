@@ -58,9 +58,12 @@ public class EnemyBullet : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player" || other.gameObject.tag == "PlayerBody")
+        if (other.gameObject.tag == "Player"/* || other.gameObject.tag == "PlayerBody"*/)
         {
             Destroy(this.gameObject);
+
+            other.GetComponent<PlayerHP>().Damage();
+           
         }
     }
 }
